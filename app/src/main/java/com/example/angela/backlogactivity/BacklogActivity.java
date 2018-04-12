@@ -27,9 +27,6 @@ public class BacklogActivity extends AppCompatActivity {
     private TasksAdapter mTasksAdapter;
     //===========================//
 
-    public BacklogActivity() {
-    }
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
