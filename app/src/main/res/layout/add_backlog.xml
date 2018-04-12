@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="37dp"
+        android:ems="10"
+        android:hint="Name..."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/OK"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="1dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="21dp"
+        android:text="OK"
+        app:layout_constraintStart_toStartOf="@+id/time"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="39dp"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="21dp"
+        android:text="CANCEL"
+        app:layout_constraintStart_toEndOf="@+id/OK"
+        app:layout_constraintTop_toBottomOf="@+id/time" />
+
+    <EditText
+        android:id="@+id/weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Weight..."
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/name"
+        app:layout_constraintTop_toBottomOf="@+id/name" />
+
+    <EditText
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:ems="10"
+        android:hint="Time..."
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/weight"
+        app:layout_constraintTop_toBottomOf="@+id/weight" />
+</android.support.constraint.ConstraintLayout>
