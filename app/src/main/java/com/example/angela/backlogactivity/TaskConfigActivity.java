@@ -32,8 +32,10 @@ public class TaskConfigActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 String Name = mName.getText().toString();
-                String Weight = mWeight.getText().toString();
-                String Time = mTime.getText().toString();
+                String WeightS = mWeight.getText().toString();
+                int Weight = Integer.parseInt(WeightS);
+                String TimeS = mTime.getText().toString();
+                int Time = Integer.parseInt(TimeS);
 
                 Task newTask = new Task(Name, Weight, Time);
                 Intent data = new Intent();

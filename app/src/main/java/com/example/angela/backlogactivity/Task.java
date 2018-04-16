@@ -6,10 +6,10 @@ import android.os.Parcelable;
 public class Task implements Parcelable {
 
     private String mName;
-    private String mWeight;
-    private String mTime;
+    private int mWeight;
+    private int mTime;
 
-    Task(String name, String weight, String time) {
+    Task(String name, int weight, int time) {
         mName = name; mWeight = weight; mTime = time;
     }
 
@@ -21,26 +21,26 @@ public class Task implements Parcelable {
         mName = name;
     }
 
-    public String getWeight() {
+    public int getWeight() {
         return mWeight;
     }
 
-    public void setWeight(String weight) {
+    public void setWeight(int weight) {
         mWeight = weight;
     }
 
-    public String getTime() {
+    public int getTime() {
         return mTime;
     }
 
-    public void setTime(String time) {
+    public void setTime(int time) {
         mTime = time;
     }
 
     protected Task(Parcel in) {
         mName = in.readString();
-        mTime = in.readString();
-        mWeight = in.readString();
+        mTime = in.readInt();
+        mWeight = in.readInt();
     }
 
     @Override
@@ -51,8 +51,8 @@ public class Task implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(mName);
-        dest.writeString(mWeight);
-        dest.writeString(mTime);
+        dest.writeInt(mWeight);
+        dest.writeInt(mTime);
     }
 
     public static final Parcelable.Creator<Task> CREATOR = new Parcelable.Creator<Task>() {

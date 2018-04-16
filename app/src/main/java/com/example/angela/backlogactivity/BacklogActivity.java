@@ -2,6 +2,7 @@ package com.example.angela.backlogactivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -18,7 +19,7 @@ import java.util.List;
 public class BacklogActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_ADD_TASK = 1;
-    private ImageView mPlus;
+    private FloatingActionButton mPlus;
     private TextView mList;
 
     //TUTAJ OBSLUGA RECYCLER VIEW//
@@ -26,7 +27,6 @@ public class BacklogActivity extends AppCompatActivity {
     private RecyclerView mRecyclerView;
     private TasksAdapter mTasksAdapter;
     //===========================//
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,7 +46,7 @@ public class BacklogActivity extends AppCompatActivity {
         //==============================================
 
         mList = (TextView) findViewById(R.id.list);
-        mPlus = (ImageView) findViewById(R.id.plus);
+        mPlus = (FloatingActionButton) findViewById(R.id.plus);
         mPlus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
