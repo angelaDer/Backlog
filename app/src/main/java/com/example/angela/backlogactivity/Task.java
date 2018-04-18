@@ -10,7 +10,9 @@ public class Task implements Parcelable {
     private int mTime;
 
     Task(String name, int weight, int time) {
-        mName = name; mWeight = weight; mTime = time;
+        mName = name;
+        mWeight = weight;
+        mTime = time;
     }
 
     public String getName() {

@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHolder>{
 
-    private List<Task> tasksList;
+    private ArrayList<Task> tasksList;
 
-    public TasksAdapter(List<Task> projectList) {
+    public TasksAdapter(ArrayList<Task> projectList) {
         this.tasksList = projectList;
     }
 
@@ -22,7 +23,7 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.tasks_list_row, parent, false);
 
-        return new TaskViewHolder(itemView);
+        return new TaskViewHolder(itemView,tasksList);
     }
 
     @Override
@@ -43,10 +44,12 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
         public TextView weight;
         public TextView time;
         public int position;
+        private ArrayList<Task> taskList;
 
-        public TaskViewHolder(View view) {
+        public TaskViewHolder(View view,List<Task>taskList) {
             super(view);
             view.setOnClickListener(this);
+            this.taskList=(ArrayList<Task>) taskList;
             name = (TextView) view.findViewById(R.id.task_row_story);
             weight = (TextView) view.findViewById(R.id.task_row_weight);
             time = (TextView) view.findViewById(R.id.task_row_time);
@@ -54,6 +57,8 @@ public class TasksAdapter extends RecyclerView.Adapter<TasksAdapter.TaskViewHold
         @Override
         public void onClick(View v){
             Intent intent = TaskActivity.newIntent(v.getContext(), tasksList.get(this.position));
+            intent.putExtra("taskList",this.taskList);
+            intent.putExtra("position",position);
             v.getContext().startActivity(intent);
         }
 

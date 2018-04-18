@@ -9,12 +9,9 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-import java.util.List;
 
 public class BacklogActivity extends AppCompatActivity {
 
@@ -23,7 +20,7 @@ public class BacklogActivity extends AppCompatActivity {
     private TextView mList;
 
     //TUTAJ OBSLUGA RECYCLER VIEW//
-    private List<Task> NameList = new ArrayList<>();
+    private ArrayList<Task> NameList = new ArrayList<>();
     private RecyclerView mRecyclerView;
     private TasksAdapter mTasksAdapter;
     //===========================//
